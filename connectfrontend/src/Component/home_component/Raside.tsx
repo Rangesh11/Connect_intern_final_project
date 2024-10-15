@@ -17,7 +17,7 @@ export default function Raside() {
 
   return (
     <aside className="col-span-2 p-5 flex flex-col gap-4 rounded-lg row-span-1 max-h-[700px] overflow-y-auto bg-blue transition-transform hover:scale-105 max-lg:row-span-1 max-first:max-h-[1000px]">
-      {data && (
+      {/* {data && (
         <>
           <p className="text-3xl text-black">Latest Activity</p>
           <div className="flex flex-col gap-2">
@@ -29,7 +29,7 @@ export default function Raside() {
             ))}
           </div>
         </>
-      )}
+      )} */}
       <p className='text-black text-3xl font-bold'>Activity Friends</p>
       <div>
         {data && data.results.map((userdata: { user_name: string, user_id: string }) => (
