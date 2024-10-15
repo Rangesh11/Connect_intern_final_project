@@ -83,11 +83,12 @@ app.use('*', async (c, next) => {
 
   // CORS middleware configuration
   const corsMiddleware = cors({
-    origin: 'http://localhost:5173',
+    origin: ['http://localhost:5173', 'https://connect-intern-final-project.vercel.app'],
     allowHeaders: ['Origin', 'Content-Type', 'Authorization'],
     allowMethods: ['GET', 'OPTIONS', 'POST', 'PUT', 'DELETE'],
     credentials: true,
-  })
+  });
+  
 
   // Apply CORS middleware to all routes to allow cross-origin requests
   return await corsMiddleware(c, next)
