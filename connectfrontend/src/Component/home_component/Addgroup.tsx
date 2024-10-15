@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import useFetch from '../hook/UseFetch';
 import { userid_context } from '../home_component/Home';
 import { useContext } from 'react';
@@ -18,7 +17,7 @@ interface GroupMembers {
 
 export default function Addgroup() {
   const { _userid, _collegeid } = useContext(userid_context);
-  const { data, refetch } = useFetch({ url: `https://connectapi.tharanitharan-n2022cse.workers.dev/getGroupsForUserAndnotcollege/${_userid}/${_collegeid}` });
+  const { data } = useFetch({ url: `https://connectapi.tharanitharan-n2022cse.workers.dev/getGroupsForUserAndnotcollege/${_userid}/${_collegeid}` });
   console.log(data);
 
   async function handleAdd(groupId: string): Promise<void> {
@@ -41,7 +40,6 @@ export default function Addgroup() {
       if (response.ok) {
         console.log('Group added successfully');
         // Refetch the data to update the UI after successful addition
-        refetch();
       } else {
         console.error('Failed to add group');
       }

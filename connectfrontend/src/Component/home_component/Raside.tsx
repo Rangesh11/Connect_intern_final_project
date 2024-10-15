@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import useFetch from '../hook/UseFetch';
 import { userid_context } from '../home_component/Home';
 import { useNavigate } from 'react-router-dom';
 
 export default function Raside() {
   const navigate = useNavigate();
-  const { _userid, _collegeid, _chat, _setchat } = useContext(userid_context);
+  const { _userid, _collegeid, _setchat } = useContext(userid_context);
   const { data } = useFetch({ url: `https://connectapi.tharanitharan-n2022cse.workers.dev/getApprovedSender/${_userid}/${_collegeid}` });
   console.log("RAside", data);
 

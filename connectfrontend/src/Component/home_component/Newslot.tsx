@@ -1,10 +1,7 @@
-import React, { FC, ReactNode } from 'react';
+import  { FC, ReactNode } from 'react';
 import Aside from './Aside';
 import Nav from './Nav';
 import Raside from './Raside';
-import { userid_context } from '../home_component/Home';
-import { useContext } from 'react';
-import bg from './bg.gif';
 
 interface SlotContainerProps {
   children: ReactNode;

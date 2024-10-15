@@ -39,7 +39,7 @@ export default function CreateGroup() {
       });
 
       if (response.ok) {
-        const responseData = await response.json(); // Add this line to handle response data if needed
+        // const responseData = await response.json(); // Add this line to handle response data if needed
         console.log('Post submitted successfully');
         // Clear input fields after successful submission
         setgroup_id('');

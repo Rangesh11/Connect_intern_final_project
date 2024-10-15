@@ -10,7 +10,7 @@ interface Post {
 }
 
 export default function Addpost() {
-  const { _userid, _collegeid } = useContext(userid_context);
+  const { _userid } = useContext(userid_context);
   const [title, setTitle] = useState<string>('');
   const [desc, setDesc] = useState<string>('');
 
