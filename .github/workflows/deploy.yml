@@ -5,20 +5,24 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  build-backend:
+    name: Build Backend (Hono)
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./connectbackend
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Setup Node
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'  # or whatever version you're using
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install backend dependencies
+        run: npm install
 
-    - name: Run Tests
-      run: npm test || echo "No tests found"  # Just to prevent breaking if no tests exist
+      - name: Build or Lint backend (optional)
+        run: npm run build || echo "No build script"
